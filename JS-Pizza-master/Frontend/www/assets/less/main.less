@@ -1,0 +1,267 @@
+@mainColor: blue;
+@minWidth: 530px;
+@full: 100%;
+@fullScreenHeight: 100vh;
+@fullScreenWidth: 100vw;
+.pizza-card {
+  img {
+    //max-width: 250px;
+  }
+
+  h3 {
+    color: @mainColor;
+    background-color: lighten(@mainColor, 45%);
+  }
+}
+
+body{
+	min-width: @minWidth;
+	background-color: beige;
+}
+
+#cart {
+	float: right;
+	height: @fullScreenHeight;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: @fullScreenWidth*0.25;
+	min-width: 220px;
+}
+
+#header {
+	padding: 30px 5px 30px 5px;
+	font-weight: 700;
+	height: 0.15*@fullScreenHeight;
+	background-color: white;
+}
+
+#ordered {
+	display: inline-block;
+	background-color: orange;
+	width: 15px;
+	height: 15px;
+	color: white;
+	font-size: 10px;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 50%;
+}
+
+#clear {
+	box-sizing: border-box;
+	padding-top: 5px;
+	float: right;
+	color: grey;
+	font-size: 8px;
+	/* vertical-align: middle; */
+}
+
+#middle {
+	height: 0.65*@fullScreenHeight;
+	width: @full;
+	background-color: lightgrey;
+	border-bottom: 1px solid grey;
+}
+
+.order-template{
+	background-color: inherit;
+	border-bottom: 1px solid grey;
+	overflow: auto;
+}
+
+.order-info{
+	box-sizing: border-box;
+	float: left;
+	width: 70%;
+	/* background-color: blue; */
+	padding: 15px 0px 15px 15px;
+}
+
+.pizza-name{
+	color: orange;
+	font-size: 15px;
+}
+
+.order-image{
+	box-sizing: border-box;
+	width: 30%;
+	float: right;
+	padding: 15px 0px 0px 0px;
+}
+
+.crop{
+	width: 40px;
+	height: 80px;
+	overflow: hidden;
+	float: right;
+	img{
+    	width: 80px;
+    	height: 80px;
+    	background-color: lightgrey;
+    	border-radius: 50%;
+    }
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	box-sizing: border-box;
+	padding: 10px 5px 10px 5px;
+	width: 100%;
+	height: 20vh;
+	background-color: white;
+	font-weight: 700;
+}
+
+#order-total{
+	float: right;
+	font-size: 20px;
+}
+
+#order-btn{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 2.5em;
+	width: 10em;
+	background-color: orange;
+}
+
+#nav-top{
+/* 	background-color: yellow;
+ */	float: right;
+	height: 1.75em;
+	width: 90%;
+	border-bottom: 1.5px solid #9d9d9d;
+}
+
+#nav-top span{
+	color: #9d9d9d;
+	vertical-align: middle;
+}
+
+#nav-text-top-2{
+	display: inline-block;
+	margin-left: 40px;
+	font-size: 60%;
+}
+
+#nav-text-top-3{
+	display: inline-block;
+	margin-left: 40px;
+}
+
+#nav-bottom{
+	float: right;
+	width: 90%;
+}
+
+#nav-text-bottom{
+	color: white;
+	vertical-align: middle;
+}
+
+#enter-btn{
+	box-sizing: border-box;
+	padding: 0px 6px 0px 6px;
+	position: absolute;
+	right: 6%;
+	top: -3px;
+	background-color: orange;
+	color: white;
+	font-size: 10px;
+	height: 1.5em;
+	width: 60px;
+	text-align: center;
+}
+
+@brandHeight: 120px;
+@brandWidth: 8%;
+#brand{
+    position: absolute;
+    left: 3%;
+    top: 0;
+    width: @brandWidth;
+    height: @brandHeight;
+    background-image: url('../images/discount.svg');
+    background-size: 100% @brandHeight;
+    transform: rotate(180deg);
+}
+
+#brand-name{
+    position: absolute;
+    left: 3%;
+    top: 0;
+    padding-top: 8px;
+    width: @brandWidth;
+    text-align: center;
+    color: white;
+    span{
+        font-size: 18px;
+    }
+}
+
+@discountHeight: 180px;
+@minDiscountWidth: 65px;
+@discountLeft: 20px;
+@discountBottom: 0;
+#discount{
+    position: fixed;
+    left: @discountLeft;
+    bottom: @discountBottom;
+    width: 6%;
+    min-width: @minDiscountWidth;
+    height: @discountHeight;
+    background-image: url('../images/discount.svg');
+    background-size: 100% @discountHeight;
+}
+
+@fontSize: 11px;
+@fontWeight: 700;
+#discount-text{
+    position: fixed;
+    left: @discountLeft;
+    bottom: @discountBottom;
+    width: 6%;
+    min-width: @minDiscountWidth;
+    padding-bottom: 8px;
+    text-align: center;
+    span{
+        font-size: @fontSize;
+        font-weight: @fontWeight;
+        color: white;
+    }
+}
+
+#label{
+    color: white;
+    font-size: @fontSize;
+    font-weight: @fontWeight;
+    padding-bottom: 5px;
+    border-bottom: dotted red 3px;
+}
+
+@media(max-width: 991px){
+	#cart{
+		width: 33vw;
+	}
+
+	#nav-text-top-3{
+		display: none;
+	}
+}
+
+@media(max-width: 767px){
+	#cart{
+		display: none;
+	}
+
+	#nav-text-top-2{
+		display: none;
+	}
+}
