@@ -20,16 +20,44 @@
   }
 
   .thumbnail{
-    height: 470px;
+    height: 485px;
   }
 }
 
+.centralize{
+	position: absolute;
+	bottom: 30px;
+	left: 35px;
+	right: 35px;
+	font-weight: 700;
+	color: chocolate;
+}
+
+.left-div{
+	float: left;
+	text-align: center;
+}
+
+.right-div{
+	float: right;
+	text-align: center;
+}
+
+@backgroundColor: darkorange;
 .buy-big{
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    margin: auto;
+	margin-top: 3px;
+	background-color: @backgroundColor;
+	:hover{
+		background-color: darken(@backgroundColor, 20%);
+	}
+	:focus{
+		background-color: darken(@backgroundColor, 20%);
+	}
+}
+
+.buy-small{
+	margin-top: 3px;
+	background-color: @backgroundColor;
 }
 
 body{
@@ -100,6 +128,22 @@ body{
 .pizza-name{
 	color: orange;
 	font-size: 15px;
+}
+
+.plus{
+	border-radius: 50%;
+}
+
+.minus{
+	border-radius: 50%;
+}
+
+#glyph-x{
+	margin-top: 2px;
+}
+
+#price-label{
+	color: brown;
 }
 
 .order-image{
@@ -276,7 +320,7 @@ body{
 @media (max-width: 1199.5px){
     .pizza-card{
         .thumbnail{
-            height: 560px;
+            height: 585px;
         }
     }
 }
@@ -299,7 +343,7 @@ body{
 
 	.pizza-card{
         .thumbnail{
-            height: 480px;
+            height: 485px;
         }
     }
 
@@ -319,7 +363,7 @@ body{
 
 	.pizza-card{
 	    .thumbnail{
-	        height: 495px;
+	        height: 520px;
 	    }
 	}
 

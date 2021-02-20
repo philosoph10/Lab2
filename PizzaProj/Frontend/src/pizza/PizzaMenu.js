@@ -40,11 +40,48 @@ function filterPizza(filter) {
         //pizza_shown.push(pizza);
 
         //TODO: зробити фільтри
+        if(filter in pizza.content) {
+            pizza_shown.push(pizza);
+        }
     });
 
     //Показати відфільтровані піци
     showPizzaList(pizza_shown);
 }
+
+$("#meat-filter").click(function(){
+    filterPizza('meat');
+});
+
+$("#pineapple-filter").click(function(){
+    filterPizza('pineapple');
+});
+
+$("#mushroom-filter").click(function(){
+    filterPizza('mushroom');
+});
+
+$("#ocean-filter").click(function(){
+    filterPizza('ocean');
+});
+
+$("#universal-filter").click(function(){
+    showPizzaList(Pizza_List);
+});
+
+$("#show-cart").click(function(){
+    if($("#cart-general").css("display") == "none"){
+        $("#cart-general").show();
+        $("#cart-general").css("z-index",1);
+        $(this).css("top", "2px");
+        $(this).text("Hide Cart");
+    } else{
+        $("#cart-general").hide();
+        $(this).css("top", "30px");
+        $(this).text("Show Cart");
+    }
+
+});
 
 function initialiseMenu() {
     //Показуємо усі піци

@@ -36,6 +36,21 @@ function getIngredientsArray(pizza) {
         </div>
 
         <!-- Перед тим щоб показати кнопку необхідно переконатися, що піца має великий розмір -->
-        <button class="btn btn-primary buy-big">Купити велику</button>
+        <div class = "centralize">
+            <div class = "left-div">
+                <%if(pizza.big_size) {%>
+                    <span>Ціна: <%= pizza.big_size.price%>грн.</span>
+                    <br>
+                    <button class="btn btn-primary buy-big">Велика</button>
+                <%}%>
+            </div>
+            <div class = "right-div">
+                <%if(pizza.small_size) {%>
+                    <span>Ціна: <%= pizza.small_size.price%>грн.</span>
+                    <br>
+                    <button class="btn btn-primary buy-small">Мала</button>
+                <%}%>
+            </div>
+        </div>
     </div>
 </div>

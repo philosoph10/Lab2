@@ -1,13 +1,13 @@
 <div class = "order-template">
     <div class = "order-info">
         <div>
-            <span class="pizza-name"><%= pizza.title %> (<%= size %>)</span>
-            <div>Ціна: <%= pizza[size].price %> грн.</div>
+            <span class="pizza-name"><%= pizza.title%> <%if (size=='big_size'){%>(велика)<%} else {%>(мала)<%}%></span>
+            <div id="price-label">Ціна: <%= pizza[size].price %> грн.</div>
             <div>
                 <button class="btn btn-danger minus">-</button>
                 <span class="label label-default"><%= quantity %></span>
                 <button class="btn btn-success plus">+</button>
-                <button class="btn btn-danger remove"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <button class="btn btn-danger remove"><span id = "glyph-x" class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
             </div>
         </div>
     </div>
