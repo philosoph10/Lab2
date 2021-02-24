@@ -1,0 +1,146 @@
+<% include common/header.ejs %>
+
+<div class="">
+    <div id="cart-general">
+        <div id="header">
+		<span style="vertical-align: middle;">
+			Замовлення
+			<span id="ordered">3</span>
+		</span>
+            <span id="clear">Очистити замовлення</span>
+        </div>
+        <div id="cart">
+            <div class="order-template" style="">
+                <div class="order-info">
+                    <div>
+                        <span class="pizza-name">BBQ (Мала)</span>
+                        <div style="font-weight: 700;">Ціна: 556 грн.</div>
+                        <div>
+                            <button class="btn btn-danger minus">-</button>
+                            <span class="label label-default">4</span>
+                            <button class="btn btn-success plus">+</button>
+                        </div>
+                    </div>
+                    <div class="">
+                    </div>
+                </div>
+                <div class="order-image">
+                    <div class="crop">
+                        <img src="assets/images/pizza_2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="order-template" style="">
+                <div class="order-info">
+                    <div>
+                        <span class="pizza-name">Россо Густо (Мала)</span>
+                        <div style="font-weight: 700;">Ціна: 189 грн.</div>
+                        <div>
+                            <button class="btn btn-danger minus">-</button>
+                            <span class="label label-default">1</span>
+                            <button class="btn btn-success plus">+</button>
+                        </div>
+                    </div>
+                    <div class="">
+                    </div>
+                </div>
+                <div class="order-image">
+                    <div class="crop">
+                        <img src="assets/images/pizza_4.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="order-template" style="">
+                <div class="order-info">
+                    <div>
+                        <span class="pizza-name">Міксовий поло (Велика)</span>
+                        <div style="font-weight: 700;">Ціна: 179 грн.</div>
+                        <div>
+                            <button class="btn btn-danger minus">-</button>
+                            <span class="label label-default">1</span>
+                            <button class="btn btn-success plus">+</button>
+                        </div>
+                    </div>
+                    <div class="">
+                    </div>
+                </div>
+                <div class="order-image">
+                    <div class="crop">
+                        <img src="assets/images/pizza_1.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            Сума замовлення
+            <span id="order-total">924 грн.</span>
+            <button type="button" class="btn btn-primary" id="order-btn">Замовити</button>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-dark" id="show-cart">Show Cart</button>
+    <!-- Here starts pizza code -->
+    <!-- Here starts pizza code -->
+    <!-- Here starts pizza code -->
+
+    <div class="container col-md-9 col-sm-8 col-xs-12">
+        <div class="row" id="filters">
+            <a href="#" class="btn btn-primary" id="meat-filter">М'ясна</a>
+            <a href="#" class="btn btn-primary" id="pineapple-filter">Ананаси</a>
+            <a href="#" class="btn btn-primary" id="mushroom-filter">Гриби</a>
+            <a href="#" class="btn btn-primary" id="ocean-filter">Морепродукти</a>
+            <a href="#" class="btn btn-primary" id="universal-filter">Усі</a>
+        </div>
+        <div class="row" id="pizza_list">
+            <div class="col-sm-6 col-md-4 col-xs-6">
+                <div class="thumbnail pizza-card">
+                    <img src="assets/images/pizza_1.jpg">
+
+                    <div class="caption"><h3>Міксовий поло</h3>
+
+                        <p>Вітчина, куриця копчена, сир моцарелла, ананаси, кукурудза, петрушка, соус томатний.</p>
+
+                        <p>
+                            <a href="#" class="btn btn-primary">Купити</a>
+                            <a href="#" class="btn btn-default">Купити</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xs-6">
+                <div class="thumbnail pizza-card">
+                    <img src="assets/images/pizza_2.jpg">
+
+                    <div class="caption"><h3>BBQ</h3>
+
+                        <p>Мисливські ковбаски, ковбаски папероні, шинка, сир домашній, шампінйони, петрушка, оливки.</p>
+
+                        <p>
+                            <a href="#" class="btn btn-primary">Купити</a>
+                            <a href="#" class="btn btn-default">Купити</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xs-6">
+                <div class="thumbnail pizza-card">
+                    <img src="assets/images/pizza_3.jpg">
+
+                    <div class="caption"><h3>Маргарита</h3>
+
+                        <p>Сир моцарелла, сир домашній, помідори, базилік, оливкова олія, соус томатний.</p>
+
+                        <p>
+                            <a href="#" class="btn btn-primary">Купити</a>
+                            <a href="#" class="btn btn-default">Купити</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include common/footer.ejs %>

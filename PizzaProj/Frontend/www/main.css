@@ -6,6 +6,8 @@
 body{
 	min-width: 530px;
 	background-color: beige;
+	margin: 0;
+	padding: 0;
 }
 
 #cart {

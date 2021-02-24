@@ -1,0 +1,127 @@
+<% include common/header.ejs %>
+
+<div id="cart-general">
+    <div id="header">
+		<span style="vertical-align: middle;">
+			Замовлення
+			<span id="ordered">3</span>
+		</span>
+        <span id="clear">Очистити замовлення</span>
+    </div>
+    <div id="cart">
+        <div class="order-template" style="">
+            <div class="order-info">
+                <div>
+                    <span class="pizza-name">BBQ (Мала)</span>
+                    <div style="font-weight: 700;">Ціна: 556 грн.</div>
+                    <div>
+                        <button class="btn btn-danger minus">-</button>
+                        <span class="label label-default">4</span>
+                        <button class="btn btn-success plus">+</button>
+                    </div>
+                </div>
+                <div class="">
+                </div>
+            </div>
+            <div class="order-image">
+                <div class="crop">
+                    <img src="assets/images/pizza_2.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="order-template" style="">
+            <div class="order-info">
+                <div>
+                    <span class="pizza-name">Россо Густо (Мала)</span>
+                    <div style="font-weight: 700;">Ціна: 189 грн.</div>
+                    <div>
+                        <button class="btn btn-danger minus">-</button>
+                        <span class="label label-default">1</span>
+                        <button class="btn btn-success plus">+</button>
+                    </div>
+                </div>
+                <div class="">
+                </div>
+            </div>
+            <div class="order-image">
+                <div class="crop">
+                    <img src="assets/images/pizza_4.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="order-template" style="">
+            <div class="order-info">
+                <div>
+                    <span class="pizza-name">Міксовий поло (Велика)</span>
+                    <div style="font-weight: 700;">Ціна: 179 грн.</div>
+                    <div>
+                        <button class="btn btn-danger minus">-</button>
+                        <span class="label label-default">1</span>
+                        <button class="btn btn-success plus">+</button>
+                    </div>
+                </div>
+                <div class="">
+                </div>
+            </div>
+            <div class="order-image">
+                <div class="crop">
+                    <img src="assets/images/pizza_1.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Сума замовлення
+        <span id="order-total">924 грн.</span>
+        <button type="button" class="btn btn-primary" id="modify-btn">Редагувати замовлення</button>
+    </div>
+</div>
+
+<button type="button" class="btn btn-dark" id="show-cart">Show Cart</button>
+
+<!-- Here starts form code -->
+<!-- Here starts form code -->
+<!-- Here starts form code -->
+
+<div class="container col-md-9 col-sm-8 col-xs-12">
+    <form class = "form-horizontal needs-validation" id = "customer-info">
+        <div class="form-group add-bottom-space">
+            <label class="control-label col-md-3 col-sm-4 col-xs-4" id = "name-label" for="name">Name</label>
+            <div class="col-md-9 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" id="name" placeholder="Name Surname">
+                <div class="invalid-feedback" id = "invalid-name">
+                    Enter your name, no numbers.
+                </div>
+            </div>
+        </div>
+        <div class="form-group add-bottom-space">
+            <label class="control-label col-md-3 col-sm-4 col-xs-4" id = "phone-label" for="phone">Phone Number</label>
+            <div class="col-md-9 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" id="phone" placeholder="+3809911122233">
+                <div class="invalid-feedback" id = "invalid-number">
+                    Enter your phone number, formatted +380, or start with 0.
+                </div>
+            </div>
+        </div>
+        <div class="form-group add-bottom-space">
+            <label class="control-label col-md-3 col-sm-4 col-xs-4" id = "address-label" for="address">Home Address</label>
+            <div class="col-md-9 col-sm-8 col-xs-8">
+                <input type="adress" class="form-control" id="address" placeholder="Kyiv, vul. Spaska, 2">
+                <div class="invalid-feedback" id = "invalid-address">
+                    Enter a valid address.
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id="delivery-info">
+        <div id = "delivery-info-cap">Інформація про замовлення</div>
+        <div id = "delivery-info-info">
+            <b>Приблизний час доставки:</b> невідомий<br>
+            <b>Адреса доставки:</b> невідома
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" id = "submit-form">Next</button>
+</div>
+
+<% include common/footer.ejs %>

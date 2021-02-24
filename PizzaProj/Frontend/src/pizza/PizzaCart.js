@@ -48,6 +48,14 @@ $("#clear").click(function(){
     }
 });
 
+$("#order-btn").click(function(){
+    window.location.href = 'http://localhost:5050/order.html';
+});
+
+$("#modify-btn").click(function(){
+    window.location.href = 'http://localhost:5050';
+});
+
 function removeFromCart(cart_item) {
     //Видалити піцу з кошика
     //TODO: треба зробити

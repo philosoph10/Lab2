@@ -4,12 +4,14 @@
 var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
 var Pizza_List = require('../Pizza_List');
+var serverRequest = require('../API');
 
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
 
 function showPizzaList(list) {
     //Очищаємо старі піци в кошику
+    //console.log("List<", list);
     $pizza_list.html("");
 
     //Онволення однієї піци
@@ -83,9 +85,19 @@ $("#show-cart").click(function(){
 
 });
 
+function getPizza(error, data) {
+    if (error) {
+        console.log('Data not found!');
+    } else {
+        showPizzaList(data);
+    }
+}
+
 function initialiseMenu() {
     //Показуємо усі піци
-    showPizzaList(Pizza_List)
+
+    serverRequest.getPizzaList(getPizza);
+    //showPizzaList(Pizza_List)
 }
 
 exports.filterPizza = filterPizza;
