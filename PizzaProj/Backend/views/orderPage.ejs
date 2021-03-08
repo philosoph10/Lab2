@@ -72,7 +72,7 @@
     </div>
     <div id="footer">
         Сума замовлення
-        <span id="order-total">924 грн.</span>
+        <span id="order-total"><span id = "total-sum">924</span> грн.</span>
         <button type="button" class="btn btn-primary" id="modify-btn">Редагувати замовлення</button>
     </div>
 </div>
@@ -84,6 +84,7 @@
 <!-- Here starts form code -->
 
 <div class="container col-md-9 col-sm-8 col-xs-12">
+    <div id = "liqpay"></div>
     <form class = "form-horizontal needs-validation" id = "customer-info">
         <div class="form-group add-bottom-space">
             <label class="control-label col-md-3 col-sm-4 col-xs-4" id = "name-label" for="name">Name</label>
@@ -117,11 +118,13 @@
     <div id="delivery-info">
         <div id = "delivery-info-cap">Інформація про замовлення</div>
         <div id = "delivery-info-info">
-            <b>Приблизний час доставки:</b> невідомий<br>
-            <b>Адреса доставки:</b> невідома
+            <b>Приблизний час доставки:</b> <span id = "delivery-time-label">невідомий</span><br>
+            <b>Адреса доставки:</b> <span id = "delivery-address-label">невідома</span>
         </div>
     </div>
     <button type="button" class="btn btn-primary" id = "submit-form">Next</button>
+
+    <div id = "google-map"></div>
 </div>
 
 <% include common/footer.ejs %>

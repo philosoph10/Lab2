@@ -1,15 +1,25 @@
 var serverPost = require('./API');
+let googleMap = require('./googleMap');
+const liqPay = require('./LiqPay');
+const pizzaCart = require('./pizza/PizzaCart');
 
 function postInfo(error, data) {
     if (error) {
-        console.error(error.text);
+        console.error(error.toString());
     } else {
-        //$(this).html("<p></p>");
-        //$(this).text(JSON.stringify(data));
-        //$(url).html("<p></p>");
+        liqPay(data);
         console.log(JSON.stringify(data));
     }
 }
+
+$('#total-sum').change(function() {
+    let sum = JSON.parse($('#total-sum').text());
+    if(sum === 0) {
+        $("#submit-form").prop('disabled', true);
+    } else {
+        $("#submit-form").prop('disabled', false);
+    }
+});
 
 $("#submit-form").click(function(){
     let dataIsValid = true;
@@ -32,22 +42,42 @@ $("#submit-form").click(function(){
         $("#phone-label").css("color", "green")
     }
     let address = $("#address").val();
-    if (!parseAddress(address)) {
-        $("#invalid-address").show();
-        $("#address-label").css("color", "firebrick");
-        dataIsValid = false
-    } else {
-        $("#invalid-address").hide();
-        $("#address-label").css("color", "green")
-    }
-    if (dataIsValid) {
-        let order_info = {
-            name: name,
-            phone_number: phoneNumber,
-            home_address: address
-        };
-        serverPost.createOrder(order_info, postInfo);
-    }
+    googleMap(address, function (err, coord) {
+        if (err) {
+            $("#invalid-address").show();
+            $("#address-label").css("color", "firebrick");
+        } else {
+            $("#invalid-address").hide();
+            $("#address-label").css("color", "green");
+            let cart = pizzaCart.getPizzaInCart();
+            let pizza_info = [];
+            for(let i = 0; i < cart.length; i++) {
+                pizza_info.push({
+                   quantity: cart[i].quantity,
+                   size: cart[i].size == 'small_size' ? 'Мала' : 'Велика',
+                   title: cart[i].pizza.title
+                });
+                //console.log(JSON.stringify(cart[i].size));
+            }
+            let pizza_string = "";
+            for(let i = 0; i < pizza_info.length; i++) {
+                pizza_string += '- ' + pizza_info[i].quantity + 'шт. [' + pizza_info[i].size + '] ' +
+                    pizza_info[i].title;
+                if(i < pizza_info.length - 1) pizza_string += ';';
+                pizza_string += '\n';
+            }
+            if (dataIsValid) {
+                let order_info = {
+                    name: name,
+                    phone_number: phoneNumber,
+                    home_address: address,
+                    amount: JSON.parse($('#total-sum').text()),
+                    pizza_info: pizza_string
+                };
+                serverPost.createOrder(order_info, postInfo);
+            }
+        }
+    });
 });
 
 function parseName(name) {
@@ -72,10 +102,5 @@ function parseNumber(phoneNumber) {
         if (phoneNumber[i] >= '0' && phoneNumber[i] <= '9') continue;
         return false;
     }
-    return true;
-}
-
-function parseAddress(address) {
-    if (!address) return false;
     return true;
 }

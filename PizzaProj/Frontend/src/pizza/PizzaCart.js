@@ -18,10 +18,6 @@ var $cart = $("#cart");
 function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
 
-    /*for (var j = 0; j < Cart.length; j++) console.log(Cart[j]);
-    console.log("Pizza: ");
-    console.log(pizza);*/
-
     var isInCart = false;
     for(var j = 0; j < Cart.length; j++) {
         if(Cart[j].pizza.id === pizza.id && Cart[j].size === size) {
@@ -103,7 +99,10 @@ function updateCart() {
             orderSum += Cart[j].pizza.big_size.price * Cart[j].quantity;
         else orderSum += Cart[j].pizza.small_size.price * Cart[j].quantity;
     }
-    $("#order-total").text(orderSum + " грн.")
+    //$("#order-total").text(orderSum + " грн.")
+    // !!!
+    $("#total-sum").text(orderSum);
+    $("#total-sum").trigger('change');
 
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
